@@ -1293,14 +1293,25 @@ input, select, textarea {
 		#header .logo {
 			width: 5.5rem;
 			height: 5.5rem;
-			line-height: 5.5rem;
 			border: solid 1px #ffffff;
-			border-radius: 100%;
+			border-radius: 50%; /* Kör alak */
+			overflow: hidden; /* Kilógó részek elrejtése */
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
-
-			#header .logo .icon:before {
-				font-size: 2rem;
-			}
+		
+		#header .logo img {
+			width: 100%; /* Kitölti a teljes kört */
+			height: 100%;
+			object-fit: cover; /* A kép kitölti a területet, nem torzul */
+			object-position: center; /* Kép középre igazítása */
+		}
+		
+		#header .logo .icon:before {
+			font-size: 2rem; /* Ez az ikon beállításait módosítja */
+		}
+			
 
 		#header .content {
 			border-style: solid;

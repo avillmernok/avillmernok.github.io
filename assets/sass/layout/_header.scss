@@ -53,13 +53,19 @@
 			line-height: 5.5rem;
 			border: solid _size(border-width) _palette(border);
 			border-radius: 100%;
-
-			.icon {
-				&:before {
-					font-size: 2rem;
-				}
+			overflow: hidden; /* Fontos, hogy a kép ne lógjon ki */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover; /* Kitölti a kört, de nem torzul */
 			}
 		}
+		
+		
 
 		.content {
 			border-style: solid;
