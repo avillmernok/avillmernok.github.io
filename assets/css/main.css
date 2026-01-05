@@ -1817,7 +1817,22 @@ html, body {
   }
 }
 
-.spacer {
-  display: block;
-  height: 1.2rem;
+/* Hero szöveg: ugyanaz a tipográfia, mint a #header .content p-nél */
+#header .content .hero-lines {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  line-height: 2;
+}
+
+/* Térköz a sorok között */
+#header .content .hero-lines .spacer {
+  height: 1.0rem;
+}
+
+/* Mobilon kicsit kisebb térköz */
+@media screen and (max-width: 980px) {
+  #header .content .hero-lines .spacer {
+    height: 0.6rem;
+  }
 }
