@@ -1815,3 +1815,10 @@ html, body {
     max-width: 100% !important;
   }
 }
+
+/* Mobilon is maradjanak meg az általunk jelölt sortörések a header szövegben */
+@media screen and (max-width: 980px) {
+  #header .content p br.keep-break {
+    display: inline !important;
+  }
+}
