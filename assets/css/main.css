@@ -1228,6 +1228,7 @@ button {
 	-ms-transform: scale(1.0);
 	transform: scale(1.0);
 	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -1816,9 +1817,3 @@ html, body {
   }
 }
 
-/* Mobilon is maradjanak meg az általunk jelölt sortörések a header szövegben */
-@media screen and (max-width: 980px) {
-  #header .content p br.keep-break {
-    display: inline !important;
-  }
-}
