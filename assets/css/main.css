@@ -1817,3 +1817,7 @@ html, body {
   }
 }
 
+.spacer {
+  display: block;
+  height: 1.2rem;
+}
