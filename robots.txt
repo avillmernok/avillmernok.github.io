@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://avillmernok.hu/sitemap.xml
