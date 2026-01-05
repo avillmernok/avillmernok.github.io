@@ -1793,3 +1793,25 @@ body.is-article-visible #footer {
 body.is-preload #footer {
 	opacity: 0;
 }
+
+/* === Mobil fix: ne legyen vízszintes görgetés, a címek ne lógjanak túl === */
+
+/* 1) Globális overflow védelem (megszünteti az oldalra lapozást) */
+html, body {
+  overflow-x: hidden;
+}
+
+/* 2) Mobilon csökkentjük a túl nagy betűközt és engedjük a tördelést */
+@media screen and (max-width: 736px) {
+  h1, h2, h3 {
+    letter-spacing: 0.2rem !important;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* 3) Az article ne lehessen szélesebb, mint a képernyő */
+  #main article {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
