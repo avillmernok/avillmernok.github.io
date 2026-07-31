@@ -1,18 +1,44 @@
-document.querySelector("form").addEventListener("submit", async function(event) {
-    event.preventDefault(); // Megakadályozza az alapértelmezett beküldést
-    let form = event.target;
-    let formData = new FormData(form);
+(function () {
+    "use strict";
 
-    let response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: { "Accept": "application/json" }
-    });
+    const form = document.getElementById("contact-form");
 
-    if (response.ok) {
-        alert("Üzenet sikeresen elküldve!");
-        form.reset(); // Űrlap kiürítése
-    } else {
-        alert("Hiba történt az üzenet küldésekor.");
+    if (!form) {
+        return;
     }
-});
+
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const submitButton = form.querySelector('[type="submit"]');
+        const originalText = submitButton ? submitButton.value : "";
+
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.value = "Küldés...";
+        }
+
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: { "Accept": "application/json" }
+            });
+
+            if (!response.ok) {
+                throw new Error("A kapcsolatfelvételi üzenet elküldése nem sikerült.");
+            }
+
+            alert("Üzenet sikeresen elküldve!");
+            form.reset();
+        } catch (error) {
+            console.error(error);
+            alert("Hiba történt az üzenet küldésekor. Kérlek, próbáld újra.");
+        } finally {
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.value = originalText;
+            }
+        }
+    });
+})();

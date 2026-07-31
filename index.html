@@ -197,32 +197,68 @@
 			</article>
 
 			<!-- Opinions -->
-			 <article id="opinions">
+			<article id="opinions">
 				<h2 class="major">Vélemények</h2>
-				<ul>
-					<p>"Egy garázs villamos hálózatának megtervezésére is megvalósítására hívtam ki
-						Dávidot, aki figyelt a kéréseimre, alaposan feljegyezte őket és éreztette
-						velem, hogy figyel rám. A kivitelezés alatt végig egyeztetett velem,
-						ezért nem volt semmi félreértés, a mukát szépen elvégezte,
-						nagyon meg voltam elégedve vele" - M. Lili</p>
-					<p>"Volt a teraszon egy konnektor, ami mindig kijött a falból, erre kerestem villanyszerelőt.
-						Dávidot a Délegyházi csoportban ajánlották és viszonylag gyorsan ki is jött és megcsinálta
-						a konnektoromat. Tetszett, hogy nem csak csendben dolgozott, hanem elmagyarázta,
-						hogy miért esett ki a helyéről a konnektor, mire figyeljek ezentúl. Azóta is ő
-						a család villanyszerelője" - N.Veronika
-					</p>
-					<p>"Két lámpát cseréltettem a konyhában, segített az új lámpa kiválasztásában
-						és szépen feltette. Meg vagyok elégedve!" - T.Erika</p>
-					<p>"Konditermem beléptető rendszerét kértem Dávidtól vésznyitókkal, nagyon gyorsan
-						és esztétikailag is szépen oldotta meg. Köszönöm!" - M. Róbert</p>
+				<div id="reviews-list" class="reviews-list" aria-live="polite">
+					<p class="reviews-loading">A vélemények betöltése...</p>
+				</div>
+				<ul class="actions review-actions">
+					<li><a href="#new-review" class="button primary">Új vélemény írása</a></li>
 				</ul>
+			</article>
 
-			 </article>
+			<!-- New review -->
+			<article id="new-review">
+				<h2 class="major">Új vélemény</h2>
+				<p>
+					Köszönöm, hogy megosztod a tapasztalatodat. A vélemény közzététel előtt ellenőrzésre kerül.
+					A teljes nevet csak az ellenőrzéshez kapom meg e-mailben; a weboldalon kizárólag a vezetékneved
+					első betűje és a keresztneved jelenik meg, például: <strong>M. Lili</strong>.
+				</p>
+				<form id="review-form">
+					<div class="fields">
+						<div class="field half">
+							<label for="review-last-name">Vezetéknév</label>
+							<input type="text" name="lastName" id="review-last-name" maxlength="80"
+								autocomplete="family-name" required />
+						</div>
+						<div class="field half">
+							<label for="review-first-name">Keresztnév</label>
+							<input type="text" name="firstName" id="review-first-name" maxlength="80"
+								autocomplete="given-name" required />
+						</div>
+						<div class="field">
+							<label for="review-opinion">Vélemény</label>
+							<textarea name="opinion" id="review-opinion" rows="6" minlength="10"
+								maxlength="1500" required></textarea>
+							<div class="review-character-count" aria-live="polite">
+								<span id="review-character-count">0</span>/1500 karakter
+							</div>
+						</div>
+						<div class="field review-honeypot" aria-hidden="true">
+							<label for="review-website">Weboldal</label>
+							<input type="text" name="website" id="review-website" tabindex="-1"
+								autocomplete="off" />
+						</div>
+						<div class="field">
+							<input type="checkbox" id="review-consent" name="consent" required />
+							<label for="review-consent">Hozzájárulok, hogy a keresztnevem és a vezetéknevem kezdőbetűje
+								a véleményemmel együtt nyilvánosan megjelenjen.</label>
+						</div>
+						<div class="field" id="review-turnstile-container"></div>
+					</div>
+					<ul class="actions">
+						<li><button type="submit" id="review-submit" class="primary">Vélemény elküldése</button></li>
+						<li><button type="reset">Visszaállít</button></li>
+					</ul>
+					<p id="review-form-status" class="form-status" role="status" aria-live="polite"></p>
+				</form>
+			</article>
 
 			<!-- Contact -->
 			<article id="contact">
 				<h2 class="major">Kapcsolat</h2>
-				<form method="post" action="https://formspree.io/f/xblgjyvd">
+				<form id="contact-form" method="post" action="https://formspree.io/f/xblgjyvd">
 					<div class="fields">
 						<div class="field half">
 							<label for="name">Név</label>
@@ -267,6 +303,8 @@
 	<div id="bg"></div>
 
 	<!-- Scripts -->
+	<script src="assets/js/reviews-config.js"></script>
+	<script src="assets/js/reviews.js"></script>
 	<script src="assets/js/form_handler.js"></script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
