@@ -1,0 +1,16 @@
+name = "avillmernok-reviews"
+main = "src/index.js"
+compatibility_date = "2026-07-31"
+
+[vars]
+GITHUB_OWNER = "avillmernok"
+GITHUB_REPO = "avillmernok.github.io"
+GITHUB_BRANCH = "main"
+REVIEWS_FILE_PATH = "data/reviews.json"
+ALLOWED_ORIGINS = "https://avillmernok.hu,https://www.avillmernok.hu,https://avillmernok.github.io"
+ALLOWED_HOSTNAMES = "avillmernok.hu,www.avillmernok.hu,avillmernok.github.io"
+REQUIRE_TURNSTILE = "true"
+MODERATION_EMAIL = "avillmernok@proton.me"
+EMAIL_FROM = "A Villmérnök vélemények <velemenyek@ertesites.avillmernok.hu>"
+REVIEW_TOKEN_TTL_HOURS = "168"
+PUBLIC_SITE_URL = "https://avillmernok.hu/"
