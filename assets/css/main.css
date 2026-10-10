@@ -2007,3 +2007,28 @@ html, body {
 		text-align: left;
 	}
 }
+
+/* Délegyháza fókuszú ügyfélszerző oldalelemek */
+#header .content .inner { max-height: 54rem; }
+#header .content .hero-location { margin:.6rem 0; font-size:1.05rem; font-weight:700; letter-spacing:.075rem; line-height:1.5; text-transform:none; }
+#header .content .hero-subline { max-width:44rem; font-size:.85rem; margin:.4rem auto 1.2rem; line-height:1.8; letter-spacing:.06rem; text-transform:none; }
+#header .content .hero-proof,#header .content .hero-area { font-size:.72rem; letter-spacing:.05rem; line-height:1.65; margin:.6rem auto; text-transform:none; }
+#header .content .hero-area { opacity:.85; }
+#header .hero-actions,#main .inline-actions { display:flex; gap:.65rem; flex-wrap:wrap; align-items:center; justify-content:center; margin:1rem 0; }
+#header .hero-actions .button { min-width:11rem; letter-spacing:.07rem; padding:0 .85rem; }
+#main .inline-actions { justify-content:flex-start; }
+#main .inline-actions .button { height:auto; min-height:2.75rem; margin:0; line-height:1.45; white-space:normal; padding:.75rem 1rem; text-align:center; }
+#intro .service-lead { line-height:1.8; font-size:1.03rem; }
+#intro .service-cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.1rem; margin:1.4rem 0 2rem; }
+#intro .service-card { background:rgba(255,255,255,.06); padding:1.1rem; border:1px solid rgba(255,255,255,.23); border-radius:5px; }
+#intro .service-card h3 { margin:0 0 .65rem; font-size:.94rem; line-height:1.6; letter-spacing:.08rem; }
+#intro .service-card p { line-height:1.7; margin:0 0 .8rem; font-size:.9rem; }
+#main a:focus-visible,#header a:focus-visible { outline:2px solid #fff; outline-offset:3px; }
+@media screen and (max-width:736px) {
+ #header .content .inner { max-height:65rem; padding:2rem 1.25rem; }
+ #header .hero-actions { flex-direction:column; }
+ #header .hero-actions .button { width:100%; max-width:22rem; }
+ #intro .service-cards { grid-template-columns:1fr; }
+ #main .inline-actions { align-items:stretch; }
+ #main .inline-actions .button { flex:1 1 100%; }
+}
