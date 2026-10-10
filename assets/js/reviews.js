@@ -45,7 +45,7 @@
         }
 
         reviews.forEach(function (review) {
-            if (review && review.text && review.author) {
+            if (review && review.text && review.author && review.needs_verification !== true) {
                 reviewsList.appendChild(createReviewElement(review));
             }
         });
