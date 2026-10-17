@@ -2097,3 +2097,16 @@ html, body {
     letter-spacing: .055rem !important;
   }
 }
+
+
+/* A hat menüpontos főnavigáció tördelése kisebb képernyőkön. */
+@media screen and (max-width: 980px) and (min-width: 481px) {
+  #header nav.blog-nav ul { display:flex; flex-wrap:wrap; justify-content:center; gap:.35rem; border:0; max-width:35rem; }
+  #header nav.blog-nav ul li,
+  #header nav.blog-nav.use-middle ul li.is-middle { border:1px solid rgba(255,255,255,.75); border-radius:4px; }
+  #header nav.blog-nav ul li a { padding:0 1rem; min-width:7.5rem; letter-spacing:.11rem; }
+  #header nav.blog-nav.use-middle:after { display:none; }
+}
+@media screen and (max-width: 480px) {
+  #header nav.blog-nav.use-middle:after { display:none; }
+}
