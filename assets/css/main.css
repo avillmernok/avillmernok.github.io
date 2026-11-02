@@ -1945,6 +1945,33 @@ html, body {
 	text-align: right;
 }
 
+.review-origin {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.7rem;
+	margin-bottom: 0.8rem;
+	font-size: 0.85rem;
+}
+
+.review-stars {
+	color: #fbbc04;
+	letter-spacing: 0.075rem;
+	font-size: 1.05rem;
+	line-height: 1;
+}
+
+.review-origin a {
+	border-bottom: 1px dotted rgba(255, 255, 255, 0.45);
+}
+
+.review-card .review-excerpt {
+	font-size: 0.77rem;
+	opacity: 0.7;
+	margin-top: -0.35rem;
+	margin-bottom: 0.8rem;
+}
+
 .review-actions {
 	margin-top: 1.75rem;
 }
