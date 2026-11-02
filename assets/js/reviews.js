@@ -20,13 +20,43 @@
         const card = document.createElement("blockquote");
         card.className = "review-card";
 
+        if (review.source === "Google" && review.rating === 5) {
+            const origin = document.createElement("div");
+            origin.className = "review-origin";
+
+            const stars = document.createElement("span");
+            stars.className = "review-stars";
+            stars.textContent = "★★★★★";
+            stars.setAttribute("aria-label", "5 csillag az 5-ből");
+            origin.appendChild(stars);
+
+            if (review.source_url && /^https:\/\//.test(review.source_url)) {
+                const source = document.createElement("a");
+                source.href = review.source_url;
+                source.target = "_blank";
+                source.rel = "noopener noreferrer";
+                source.textContent = "Google-értékelés";
+                origin.appendChild(source);
+            }
+
+            card.appendChild(origin);
+        }
+
         const text = document.createElement("p");
         text.textContent = `„${normalizeText(review.text)}”`;
+        card.appendChild(text);
+
+        if (review.excerpt === true) {
+            const excerptLabel = document.createElement("p");
+            excerptLabel.className = "review-excerpt";
+            excerptLabel.textContent = "Részlet az értékelésből";
+            card.appendChild(excerptLabel);
+        }
 
         const author = document.createElement("footer");
         author.textContent = `— ${normalizeText(review.author)}`;
 
-        card.append(text, author);
+        card.appendChild(author);
         return card;
     }
 
